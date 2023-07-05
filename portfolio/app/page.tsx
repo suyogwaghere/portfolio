@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
-"use client"; // This is a client component 👈🏽
+"use client";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
 import {
-  AiFillTwitterCircle,
+  AiFillTwitterSquare,
   AiFillLinkedin,
   AiFillYoutube,
+  AiFillInstagram,
+  AiFillBehanceSquare,
   AiOutlineAntDesign,
 } from "react-icons/ai";
 import Image from "next/image";
@@ -23,10 +25,12 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className={darkMode ? " " : "dark"}>
-      <main className="bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
-        <section className=" min-h-screen">
+      <main className=" dark:bg-gray-900 ">
+        <section className="bg-hero-light bg-fixed dark:bg-hero-dark bg-cover min-h-screen px-10 md:px-20 lg:px-40">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <h1 className="text-xl font-roboto">Suyog Waghere</h1>
+            <h1 className="text-5xl font-extrabold font-Roboto_Slab dark:text-black">
+              SW
+            </h1>
             <ul className="flex items-center">
               <li>
                 <BsFillMoonStarsFill
@@ -45,26 +49,29 @@ export default function Home() {
             </ul>
           </nav>
           <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium">
+            <h2 className="text-5xl font-Montserrat font-bold py-2 text-white">
               Suyog Waghere
             </h2>
             {/* <h3 className='text-2xl py-2'>Developer.</h3> */}
-            <p className="text-md py-5 leading-8 text-gray-800  dark:text-white">
+            <p className="text-xl font-semibold py-5 leading-8 text-white ">
               Full Stack Developer | Specializing in Crafting Customized Dynamic
               Web Solutions | Proficient in React JS • Angular • Node.js •
               ExpressJS • REST APIs | Extensive Experience with Firebase,
               MongoDB, and SQLite
             </p>
           </div>
-          <div className="text-5xl flex justify-center gap-16 py03 text-gray-600  dark:text-white">
-            <AiFillTwitterCircle />
+          <div className="text-5xl flex justify-center gap-16 py03 drop-shadow-xl text-white dark:text-white">
+            <AiFillTwitterSquare />
             <AiFillLinkedin />
-            <AiFillYoutube />
+            <AiFillInstagram />
+            <AiFillBehanceSquare />
           </div>
         </section>
-        <section>
+        <section className="px-10 md:px-20 lg:px-40">
           <div>
-            <h3 className="text-3xl py-1  dark:text-white">Services I offer</h3>
+            <h3 className="text-5xl pt-5 pb-2 text-center  dark:text-white">
+              Services I offer
+            </h3>
             <p className="text-md leading-8 text-gray-800  dark:text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -75,9 +82,9 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
+            <div className="card text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image
-                className="mx-auto"
+                className="mx-auto card_image"
                 src={design}
                 width={100}
                 height={100}
@@ -96,9 +103,9 @@ export default function Home() {
               <p className="text-gray-800 py-1">Figma</p>
               <p className="text-gray-800 py-1">Indesign</p>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
+            <div className="card text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image
-                className="mx-auto"
+                className="mx-auto card_image"
                 src={consulting}
                 width={100}
                 height={100}
@@ -117,9 +124,9 @@ export default function Home() {
               <p className="text-gray-800 py-1">Figma</p>
               <p className="text-gray-800 py-1">Indesign</p>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
+            <div className="card text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image
-                className="mx-auto"
+                className="mx-auto card_image"
                 src={code}
                 width={100}
                 height={100}
@@ -140,10 +147,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
+        <section className="px-10 md:px-20 lg:px-40">
           <div>
-            <h3 className="text-3xl py-1  dark:text-white">Portfolio</h3>
-            <p className="text-md leading-8 text-gray-800  dark:text-white">
+            <h3 className="text-5xl pt-5 pb-2 text-center dark:text-white">
+              Portfolio
+            </h3>
+            {/* <p className="text-md leading-8 text-gray-800  dark:text-white">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
@@ -156,7 +165,7 @@ export default function Home() {
               believable. If you are going to use a passage of Lorem Ipsum, you
               need to be sure there anything embarrassing hidden in the middle
               of text.
-            </p>
+            </p> */}
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1 ">
@@ -221,6 +230,20 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* <section>
+          <div className="container">
+            <figure className="card">
+              <Image src={code} alt="no image" className="card-img" />
+              <figcaption className="card-title"> Hero</figcaption>
+            </figure>
+          </div>
+        </section> */}
+        {/* <section>
+          <div className="">
+            Add additional content and styling here
+            sadsd
+          </div>
+        </section> */}
       </main>
     </div>
   );
